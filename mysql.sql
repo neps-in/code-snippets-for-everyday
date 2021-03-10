@@ -1,8 +1,11 @@
 # Mysql instant usable snippets
 
 # Llist of valid comments in mysql sql file
+
 # Valide comment style 1
+
 -- double dash comment style 2
+
 /*  
 	C Style comment that is 
 	multi line comment 
