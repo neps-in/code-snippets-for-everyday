@@ -16,22 +16,10 @@ show databases;
 
 ## Create table with primary key, 
 
-
-
-
 ```
 create table people ( 
 		person_id INT AUTO_INCREMENT PRIMARY KEY , 
-		full_name varchar(50)
+		full_name varchar(50),
+		created_on datetime
 )
 ```
-
-```
-create table loan (
-	loan_id int AUTO_INCREMENT PRIMARY KEY,
-	person_id int,
-	amount int,
-	end_date datetime,
-	is_paid_out int )
-```
-
