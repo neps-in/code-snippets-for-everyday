@@ -12,9 +12,6 @@ Use case to find parent relation using a list of person name like
 * Find father of individuals.
 * Find manager or supervisors of individuals 
 
-Brinda is daughter of Nagaraj, Lakshmi
-Ganesh is son of Nagaraj, Lakshmi
-Shruthi is daughter of Basavaraj, Usha
 
 Table Structure:
 
@@ -36,7 +33,11 @@ Family table
 ```
 
 Here is the list of all the names with respective father_id, and mother_id 
-filled appropriately.
+filled appropriately as per the given usecase
+
+Brinda is daughter of Nagaraj, Lakshmi
+Ganesh is son of Nagaraj, Lakshmi
+Shruthi is daughter of Basavaraj, Usha
 
 ```
 mysql> select * from family;
