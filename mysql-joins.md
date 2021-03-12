@@ -72,10 +72,6 @@ mysql> select f.name, fa.name as fathername from family f join family fa on f.fa
 +---------+------------+
 ```
 
-select f.name, fa.name as fathername from family f 
-			join family fa on f.father_id = fa.id 
-			join family mo on f.mother_id = mo.id;
-
 ## To list father names with names of individuals using left join
 
 Another way to perform the same thing is using left join.
@@ -134,7 +130,7 @@ mysql> select f.name, fa.name as fathername, mo.name as mothername
 
 ## Problem 2 
 ## List out all the persons in the family who does not have not even one child.
-Technically speaking list all male, femal who dont even have one child.
+Technically speaking list all male, female who dont even have one child.
 
 First we need to find list of person who have atleast one child, and if we filter out all these people we will get list of person who dont have any child.
 
@@ -170,9 +166,7 @@ on fa.id = f.father_id;
 
 #### Step 3
 
-Now we got the list of father_id who has atleast one child and make this query as a sub query. 
-
-Use **in operator** ( a set operator ) to list all details from family table that 
+Now we got the list of father_id who has atleast one child and make this query as a sub query. Use **in operator** ( a set operator ) to list all details from family table that 
 matches the subquery list. But actually we dont need this because this gives list of person who has atleast one child. Just add a **NOT** before **in operator** 
 
 Now the complete query is as follows.  
