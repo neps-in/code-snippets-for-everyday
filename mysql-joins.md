@@ -35,9 +35,11 @@ Family table
 Here is the list of all the names with respective father_id, and mother_id 
 filled appropriately as per the given usecase
 
-Brinda is daughter of Nagaraj, Lakshmi
-Ganesh is son of Nagaraj, Lakshmi
-Shruthi is daughter of Basavaraj, Usha
+Brinda is daughter of Nagaraj, Lakshmi.
+
+Ganesh is son of Nagaraj, Lakshmi.
+
+Shruthi is daughter of Basavaraj, Usha.
 
 ```
 mysql> select * from family;
@@ -92,3 +94,4 @@ mysql> select f.name, fa.name as fathername from family f left join family fa on
 +-----------+------------+
 
 ```
+
