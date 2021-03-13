@@ -2,13 +2,16 @@
 
 # Llist of valid comments in mysql sql file
 
-# Valide comment style 1
 
--- double dash comment style 2
+` # Valid comment style 1 `
+
+` -- double dash comment style 2 `
 
 /*  
+	
 	C Style comment that is 
 	multi line comment 
+
 */
 
 
