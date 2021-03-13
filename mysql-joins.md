@@ -129,6 +129,9 @@ mysql> select f.name, fa.name as fathername, mo.name as mothername
 ```
 
 ## Problem 2 
+
+### Problem 2 Solution 1
+
 ## List out all the persons in the family who does not have not even one child.
 Technically speaking list all male, female who dont even have one child.
 
@@ -215,3 +218,63 @@ mysql> select * from family where id  not in (
 +----+----------+-----------+-----------+
 
 ```
+
+### Problem 2 Solution 2
+
+Another solution is to list out all names is to use outer join 
+
+```
+mysql> select f.* , fa.id from family f  
+		left outer join family fa 
+			on f.id = fa.mother_id or f.id = fa.father_id 
+			where fa.id is NULL;
++----+----------+-----------+-----------+
+| id | name     | father_id | mother_id |
++----+----------+-----------+-----------+
+|  1 | Rajmohan |      NULL |      NULL |
+|  2 | Kumaran  |      NULL |      NULL |
+|  3 | Praveen  |      NULL |      NULL |
+|  4 | Shruthi  |         9 |        10 |
+|  5 | Ganesh   |         6 |         7 |
+|  8 | Brinda   |         6 |         7 |
++----+----------+-----------+-----------+
+```
+
+### Problem 2 Solution 3
+
+select f.* , fa.id from family f  
+		inner join family fa 
+			on f.id = fa.mother_id or f.id = fa.father_id 
+			where fa.id = 0;
+
+
+## Group by
+
+Consider following senario, You have table people as given below schema, favourite icecream. How will you find number of people liking each ice cream flavours. 
+
+
+```
+mysql> desc people;                                                                                                                                    +--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| person_id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| full_name    | varchar(50) | YES  |     | NULL    |                |
+| favourite_id | int(11)     | YES  |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+3 rows in set (0.03 sec)
+
+mysql> desc ice_cream;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| id           | int(11)     | NO   | PRI | NULL    | auto_increment |
+| flavour_name | varchar(50) | YES  |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+2 rows in set (0.01 sec)
+
+```
+
+```
+select  fav.flavour_name, count(favourite_id) as favourite_counts from people p join ice_cream fav on p.favourite_id = fav.id group by favourite_id;
+
+
