@@ -84,6 +84,9 @@ create table people (
 alter table people add column favourite_flaour_id int;
 
 --------------------------------------------------------------------
+
+### Datetime format
+
 ```
 -- Datetime format
 
