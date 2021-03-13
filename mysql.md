@@ -3,9 +3,10 @@
 # Llist of valid comments in mysql sql file
 
 
-` # Valid comment style 1 `
+```
+# Valid comment style 1 
+-- double dash comment style 2 
 
-` -- double dash comment style 2 `
 
 /*  
 	
@@ -15,9 +16,15 @@
 */
 
 
-/*! MySQL-specific code */
+
+/*! MySQL-specific code this works only in mysql, not in other dbms*/
+
+Eg:
+
 /*! This will not work in other database engine
 SELECT 1 /*! +1 */
+
+```
 
 ## System related information
 
