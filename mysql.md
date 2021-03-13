@@ -1,6 +1,6 @@
 # Mysql instant usable snippets
 
-# Llist of valid comments in mysql sql file
+## List of valid comments in mysql sql file
 
 
 ```
@@ -84,7 +84,7 @@ create table people (
 alter table people add column favourite_flaour_id int;
 
 --------------------------------------------------------------------
-
+```
 -- Datetime format
 
 `YYYY-MM-DD HH:MM:SS`
@@ -101,11 +101,4 @@ insert into loan (
 			'50000', 
 			'2021-04-01 00:00:00', 1
 		);
-
-insert into ice_cream (flavour_name) value ('Vanila') ;
-insert into people( )
-SELECT p.person_id, p.full_name 
-	SUM (case when l.end_date < CURRENT_DATE then l.amount else 0 end ) as total 
-	FROM people p
-	JOIN loan l ON p.person_id = l.person_id and l.is_paid_out = 0
-	GROUP BY p.person_id, p.full_name;
+```
